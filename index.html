@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS577 Exam Prep: Graphs, Greedy &amp; Flow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>CS577 Exam Prep: <span>Graphs, Greedy &amp; Flow</span></h1>
+      <p>Kleinberg–Tardos / CLRS style problem bank with hints and full solutions. Try each problem before opening the hint.</p>
+      <div class="stats">
+        <div class="stat"><b id="stat-total">0</b> problems</div>
+        <div class="stat"><b id="stat-done">0</b> done</div>
+        <div class="stat"><b id="stat-days">–</b> days until the Nov 5 exam</div>
+      </div>
+      <div class="progress"><div id="progress-bar"></div></div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="wrap">
+      <div class="chips" id="topic-chips"></div>
+      <select id="diff-select" aria-label="Difficulty">
+        <option value="all">All difficulties</option>
+        <option value="1">Warm-up</option>
+        <option value="2">Exam level</option>
+        <option value="3">Challenge</option>
+      </select>
+      <input type="search" id="search" placeholder="Search problems (e.g. bipartite, min cut, exchange)…">
+      <label class="toggle"><input type="checkbox" id="hide-done"> Hide done</label>
+      <button class="btn" id="random-btn" title="Jump to a random unsolved problem">Random problem</button>
+      <button class="btn ghost" id="collapse-btn" title="Close every open hint and solution">Collapse all</button>
+    </div>
+  </div>
+
+  <main id="list"></main>
+
+  <footer>
+    Sources: Kleinberg &amp; Tardos <i>Algorithm Design</i> (Ch. 3, 4, 7), CLRS (Ch. 16, 22–26),
+    <a href="https://pages.cs.wisc.edu/~ruixuan/cs577/exam2/hw05-full-p.pdf">CS577 F22 HW5</a>,
+    <a href="https://pages.cs.wisc.edu/~ruixuan/cs577/exam2/hw07-full-p.pdf">CS577 F22 HW7</a>,
+    <a href="https://www.cs.princeton.edu/~wayne/kleinberg-tardos/">Wayne's K–T slides</a>.
+    Progress is saved in this browser.
+  </footer>
+
+  <script src="data/graphs.js"></script>
+  <script src="data/shortest.js"></script>
+  <script src="data/mst.js"></script>
+  <script src="data/greedy.js"></script>
+  <script src="data/flow.js"></script>
+  <script src="data/concepts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
