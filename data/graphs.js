@@ -76,7 +76,7 @@ window.PROBLEMS.push(
 },
 {
   id: "G9", topic: "graphs", diff: 2, source: "Classic (critical path)", tags: ["DAG", "longest path", "job scheduling"],
-  title: "Project with unlimited workers: critical path",
+  title: "Project with unlimited workers",
   statement: `<p>A project has <i>n</i> tasks. Task <i>v</i> takes <i>d</i>(<i>v</i>) &gt; 0 days, and there are <i>m</i> prerequisite pairs "<i>u</i> must finish before <i>v</i> starts". You have unlimited workers.</p>
 <ol><li>Compute the earliest time at which the whole project can finish.</li>
 <li>Find every <b>critical</b> task: a task such that delaying its start by any amount delays the whole project.</li></ol>
@@ -119,7 +119,7 @@ window.PROBLEMS.push(
 },
 {
   id: "G14", topic: "graphs", diff: 2, source: "Classic", tags: ["BFS", "trees", "proof"],
-  title: "Diameter of a tree with two BFS runs",
+  title: "Diameter of a tree",
   statement: `<p>The diameter of a tree is the largest distance between any two nodes. Show that this algorithm finds it in <i>O</i>(<i>n</i>) time: BFS from any node <i>r</i> to find the farthest node <i>a</i>; then BFS from <i>a</i> to find the farthest node <i>b</i>; output dist(<i>a</i>, <i>b</i>).</p>`,
   hint: `<p>Show that <i>a</i> is an endpoint of some longest path. Let (<i>x</i>, <i>y</i>) be a longest path and consider where the path from <i>r</i> to <i>a</i> meets it.</p>`,
   solution: `<p><b>Claim:</b> <i>a</i> is an endpoint of some diameter. Given the claim, the second BFS finds the diameter, and both BFS runs are <i>O</i>(<i>n</i>).</p>
@@ -133,7 +133,7 @@ window.PROBLEMS.push(
 },
 {
   id: "G15", topic: "graphs", diff: 2, source: "Classic", tags: ["BFS", "girth"],
-  title: "Shortest cycle (girth) of an unweighted graph",
+  title: "Shortest cycle in an unweighted graph",
   statement: `<p>Find the length of a shortest cycle in an undirected, unweighted graph in <i>O</i>(<i>nm</i>) time.</p>`,
   solution: `<p>For each vertex <i>r</i>, run BFS from <i>r</i>. Whenever you scan an edge (<i>u</i>, <i>w</i>) where <i>w</i> is already discovered and <i>w</i> is not the BFS parent of <i>u</i>, record the candidate length d(<i>u</i>) + d(<i>w</i>) + 1. Return the minimum candidate over all runs.</p>
 <p><b>Correctness.</b> Each candidate is at least the length of some real cycle: the two tree paths back to <i>r</i> plus the edge contain a cycle, possibly shorter if the paths share a prefix. So the answer is never below the girth. Now take a shortest cycle <i>C</i> of length <i>g</i> and run BFS from a vertex <i>r</i> on <i>C</i>. Some edge of <i>C</i> joins two vertices whose distances along <i>C</i> from <i>r</i> sum to <i>g</i> − 1. Their BFS distances are at most those values, so that edge produces a candidate of at most <i>g</i>. Running <i>n</i> BFS searches costs <i>O</i>(<i>n</i>(<i>n</i> + <i>m</i>)).</p>`

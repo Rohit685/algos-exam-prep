@@ -46,7 +46,7 @@ window.PROBLEMS.push(
 },
 {
   id: "S7", topic: "shortest", diff: 2, source: "K–T Ch. 4 / CLRS-style", tags: ["Dijkstra", "bottleneck", "widest path"],
-  title: "Widest (maximum bottleneck) path",
+  title: "Tallest truck route",
   statement: `<p>Each road has a height clearance <i>c</i>(<i>e</i>). A truck wants a route from <i>s</i> to <i>t</i> whose smallest clearance is as large as possible. Give an <i>O</i>(<i>m</i> log <i>n</i>) algorithm. Bonus: for an undirected graph, relate the answer to a spanning tree.</p>`,
   solution: `<p><b>Modified Dijkstra:</b> let <i>b</i>(<i>v</i>) be the best bottleneck found so far, with <i>b</i>(<i>s</i>) = ∞ and all others −∞. Use a max-heap. Repeatedly extract the <i>u</i> with the largest <i>b</i>, and for each edge set <i>b</i>(<i>v</i>) = max(<i>b</i>(<i>v</i>), min(<i>b</i>(<i>u</i>), <i>c</i>(<i>u</i>, <i>v</i>))). This works because extending a path never increases its bottleneck, which is the same monotonicity Dijkstra needs.</p>
 <p><b>Undirected bonus:</b> in a <i>maximum</i> spanning tree, the tree path between <i>s</i> and <i>t</i> is a widest path. Suppose a better path existed, so all its edges are wider than the narrowest tree edge <i>e</i> on the s–t tree path. Removing <i>e</i> splits the tree into two sides, and that better path must contain some edge crossing between them. Swapping that edge in for <i>e</i> gives a heavier spanning tree, a contradiction. This is the cut property for maximum spanning trees, and K–T's "minimum altitude" exercise is the mirror image of this problem.</p>`

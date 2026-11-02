@@ -98,7 +98,7 @@ window.PROBLEMS.push(
 },
 {
   id: "R12", topic: "greedy", diff: 2, source: "K–T 4.3", tags: ["caching", "Belady"],
-  title: "Optimal caching (farthest in future)",
+  title: "Optimal caching",
   statement: `<p>The cache holds <i>k</i> = 2 items and starts empty. Requests: a, b, c, b, c, a, b.</p>
 <ol><li>Simulate Farthest-in-Future (FF), which evicts the item whose next request is farthest away, and count the misses.</li><li>Simulate LRU on the same sequence.</li><li>Sketch why FF is optimal.</li></ol>`,
   solution: `<p><b>FF:</b> a miss {a}; b miss {a,b}; c miss: a is next needed at position 6 and b at position 4, so evict a, giving {b,c}; b hit; c hit; a miss: b is needed at 7 and c never again, so evict c, giving {a,b}; b hit. That is <b>4 misses</b>, and the first 3 are unavoidable cold misses.</p>

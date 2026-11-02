@@ -66,7 +66,7 @@ window.PROBLEMS.push(
 },
 {
   id: "M9", topic: "mst", diff: 1, source: "CLRS-style", tags: ["transformations"],
-  title: "Spanning tree variants by transformation",
+  title: "Spanning tree variants",
   statement: `<p>Reduce each problem to an ordinary MST computation.</p>
 <ol><li>Maximum-weight spanning tree.</li><li>Spanning tree minimizing the <b>product</b> of its edge weights (all weights &gt; 0).</li><li>The weights can be negative. Do Prim and Kruskal still work?</li></ol>`,
   solution: `<ol><li>Negate every weight, or equivalently sort in decreasing order and run Kruskal.</li><li>Minimizing a product is the same as minimizing Σ log <i>w</i>, because log is increasing. In fact Kruskal only compares weights, so any strictly increasing transformation gives the same tree; you can run Kruskal on the original weights.</li><li>Yes. The cut and cycle properties never used non-negativity, and both algorithms depend only on the relative order of the weights. Only shortest path algorithms like Dijkstra care about negative weights.</li></ol>`

@@ -157,7 +157,7 @@ window.PROBLEMS.push(
 },
 {
   id: "F21", topic: "flow", diff: 2, source: "K–T 7.11", tags: ["project selection", "closure", "min cut"],
-  title: "Project selection (with numbers)",
+  title: "Choosing projects",
   statement: `<p>The projects and their profits: P1 +10, P2 +6, P3 −8, P4 −5. P1 requires P3, and P2 requires both P3 and P4. Choose a prerequisite-closed set of projects that maximizes the total profit. Build the network, find the min cut, and read off the answer. Then state the general reduction.</p>`,
   solution: `<p><b>Network:</b> the edge <i>s</i> → <i>i</i> has capacity <i>p</i><sub>i</sub> when <i>p</i><sub>i</sub> &gt; 0, the edge <i>i</i> → <i>t</i> has capacity −<i>p</i><sub>i</sub> when <i>p</i><sub>i</sub> &lt; 0, and each "<i>i</i> requires <i>j</i>" becomes an edge <i>i</i> → <i>j</i> of capacity ∞. Here that means s→P1 10, s→P2 6, P3→t 8, P4→t 5, and P1→P3, P2→P3, P2→P4 with capacity ∞.</p>
 <p>Let <i>C</i> = sum of the positive profits = 16. For a closed set <i>A</i>, the cut ({s} ∪ <i>A</i>, rest) has capacity <i>C</i> − profit(<i>A</i>). The ∞ edges force <i>A</i> to be closed, since otherwise the cut would be infinite.</p>
